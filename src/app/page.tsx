@@ -1,13 +1,10 @@
-'use client'
+export default async function Page() {
+  const res = await fetch(`https://...`)
+  const data = await res.json()
 
-import { useRouter } from 'next/navigation'
+  if (!res.ok) {
+    return 'There was an error.'
+  }
 
-export default function Page() {
-  const router = useRouter()
-
-  return (
-    <button type="button" onClick={() => router.push('/dashboard')}>
-      Dashboard
-    </button>
-  )
+  return '...'
 }
