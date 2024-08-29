@@ -1,3 +1,8 @@
+import { Signup } from "../ui/signup"
+
 export default function Page() {
-    return <h1>Hello, Dashboard Page!</h1>
+    return <>
+        <Signup />
+        <h1>Hello, Dashboard Page!</h1>
+    </>
 }
