@@ -1,8 +1,16 @@
-import { Signup } from "../ui/signup"
+import { Suspense } from 'react'
+import Weather from '../components/Weather'
+import PostFeed from '../components/PostFeed'
 
-export default function Page() {
-    return <>
-        <Signup />
-        <h1>Hello, Dashboard Page!</h1>
-    </>
+export default function Posts() {
+    return (
+        <section>
+            <Suspense fallback={<p>Loading feed...</p>}>
+                <PostFeed />
+            </Suspense>
+            <Suspense fallback={<p>Loading weather...</p>}>
+                <Weather />
+            </Suspense>
+        </section>
+    )
 }
